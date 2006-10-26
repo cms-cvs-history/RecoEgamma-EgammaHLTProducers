@@ -1,0 +1,14 @@
+#
+# producer for hltSingleElectronHcalIsol
+#
+module hltSingleElectronHcalIsol = EgammaHLTHcalIsolationProducers {
+
+  InputTag recoEcalCandidateProducer = hltSingleElectronEtFilter
+
+  InputTag hbRecHitProducer      = hbhereco
+  InputTag hfRecHitProducer      = hfreco
+
+  double egHcalIsoPtMin = 0.
+  double egHcalIsoConeSize = 0.15
+
+}

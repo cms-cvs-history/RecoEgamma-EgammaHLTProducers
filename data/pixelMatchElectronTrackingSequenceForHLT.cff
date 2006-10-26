@@ -1,0 +1,10 @@
+# electron tracking sequence after pixel seeding
+# $Id: $
+
+sequence pixelMatchElectronTrackingSequenceForHLT = {
+                                                     ckfTrackCandidatesBarrel,
+                                                     ckfTrackCandidatesEndcap,
+                                                     ctfWithMaterialTracksBarrel,
+                                                     ctfWithMaterialTracksEndcap,
+                                                     pixelMatchElectronsForHLT
+                                                     }
