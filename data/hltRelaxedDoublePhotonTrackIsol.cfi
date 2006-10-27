@@ -1,0 +1,15 @@
+#
+# producer for hltRelaxedDoublePhotonTrackIsol
+#
+module hltRelaxedDoublePhotonTrackIsol = EgammaHLTPhotonTrackIsolationProducers {
+
+  InputTag recoEcalCandidateProducer = hltRelaxedDoublePhotonHcalIsolFilter
+  InputTag trackProducer       = ctfWithMaterialTracks
+
+  double egTrkIsoPtMin        = 1.5
+  double egTrkIsoConeSize     = 0.3
+  double egTrkIsoZSpan        = 999999.
+  double egTrkIsoRSpan        = 999999.
+  double egTrkIsoVetoConeSize = 0.
+
+}

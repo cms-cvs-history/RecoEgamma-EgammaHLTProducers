@@ -1,0 +1,16 @@
+#
+# producer for hltRelaxedDoubleElectronTrackIsol
+#
+module hltRelaxedDoubleElectronTrackIsol = EgammaHLTElectronTrackIsolationProducers {
+
+  InputTag recoEcalCandidateProducer = hltRelaxedDoubleElectronHcalIsolFilter
+  InputTag trackProducer       = ctfWithMaterialTracks
+  InputTag electronProducer    = pixelMatchElectronsForHLT
+
+  double egTrkIsoPtMin        = 1.5
+  double egTrkIsoConeSize     = 0.2
+  double egTrkIsoZSpan        = 0.1
+  double egTrkIsoRSpan        = 999999.
+  double egTrkIsoVetoConeSize = 0.02
+
+}

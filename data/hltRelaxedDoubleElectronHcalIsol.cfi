@@ -1,0 +1,14 @@
+#
+# producer for hltRelaxedDoubleElectronHcalIsol
+#
+module hltRelaxedDoubleElectronHcalIsol = EgammaHLTHcalIsolationProducers {
+
+  InputTag recoEcalCandidateProducer = hltRelaxedDoubleElectronEtFilter
+
+  InputTag hbRecHitProducer      = hbhereco
+  InputTag hfRecHitProducer      = hfreco
+
+  double egHcalIsoPtMin = 0.
+  double egHcalIsoConeSize = 0.15
+
+}
