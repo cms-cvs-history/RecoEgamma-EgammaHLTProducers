@@ -1,4 +1,4 @@
-# $Id: pixelMatchElectronSequenceForHLT.cff,v 1.1 2006/10/26 15:00:49 monicava Exp $
+# $Id: pixelMatchElectronSequenceForHLT.cff,v 1.2 2006/11/10 00:02:36 monicava Exp $
 # create a sequence with all required modules and sources needed to make
 # pixel based electrons
 # NB: it assumes that ECAL clusters (hybrid) are in the event
@@ -48,7 +48,7 @@ replace ckfTrackCandidatesBarrel.SeedProducer ="electronPixelSeeds"
 replace ckfTrackCandidatesBarrel.SeedLabel ="correctedHybridSuperClusters"
 module ckfTrackCandidatesEndcap = ckfTrackCandidates from "RecoTracker/CkfPattern/data/CkfTrackCandidates.cfi"
 replace ckfTrackCandidatesEndcap.SeedProducer ="electronPixelSeeds"
-replace ckfTrackCandidatesEndcap.SeedLabel ="correctedIslandEndcapSuperClusters"
+replace ckfTrackCandidatesEndcap.SeedLabel ="correctedEndcapSuperClustersWithPreshower"
 
 # CTF track fit with material
 #include "RecoTracker/TrackProducer/data/CTFFinalFitWithMaterial.cff"

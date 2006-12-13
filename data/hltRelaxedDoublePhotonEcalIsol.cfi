@@ -6,7 +6,7 @@ module hltRelaxedDoublePhotonEcalIsol = EgammaHLTEcalIsolationProducers {
   InputTag bcBarrelProducer          = islandBasicClusters:islandBarrelBasicClusters
   InputTag bcEndcapProducer          = islandBasicClusters:islandEndcapBasicClusters
   InputTag scIslandBarrelProducer    = correctedIslandBarrelSuperClusters
-  InputTag scIslandEndcapProducer    = correctedIslandEndcapSuperClusters
+  InputTag scIslandEndcapProducer    = correctedEndcapSuperClustersWithPreshower
   InputTag recoEcalCandidateProducer = hltRelaxedDoublePhotonEtFilter
 
   double egEcalIsoEtMin = 0
