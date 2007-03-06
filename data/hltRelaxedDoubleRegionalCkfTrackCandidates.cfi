@@ -1,0 +1,20 @@
+#
+# This cfi should be included to run the CkfTrackCandidateMaker 
+#
+
+module hltRelaxedDoubleRegionalCkfTrackCandidates = CkfTrackCandidateMaker
+  {	
+     #bool   seedCleaning         = false
+     string SeedProducer          = "hltRelaxedDoubleRegionalPixelSeedGenerator"
+     string SeedLabel             = ""
+     string TrajectoryBuilder    = "CkfTrajectoryBuilder"
+
+
+# nested parameter set for TransientInitialStateEstimator
+     PSet TransientInitialStateEstimatorParameters =
+      {
+         string propagatorAlongTISE    = "PropagatorWithMaterial"
+         string propagatorOppositeTISE = "PropagatorWithMaterialOpposite"
+      }	
+
+  }
