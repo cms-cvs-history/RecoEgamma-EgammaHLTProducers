@@ -25,6 +25,10 @@ module hltIslandBasicClusters = EgammaHLTIslandClusterProducer
     double posCalc_x0 = 0.89
 
     InputTag l1Tag = l1extraParticles:Isolated
+    double l1LowerThr = 0.
+    double l1UpperThr = 999.
+    double regionEtaMargin = 0.14
+    double regionPhiMargin = 0.4
 
     string clustershapecollectionEB = "islandBarrelShape"
     string clustershapecollectionEE = "islandEndcapShape"
