@@ -2,7 +2,7 @@ module hltSingleCtfWithMaterialTracks = TrackProducer
 {
   string Fitter = "KFFittingSmoother"   
   string Propagator = "PropagatorWithMaterial" 
-  string src = "hltSingleCkfTrackCandidates"
+  string src = "hltSingleRegionalCkfTrackCandidates"
   string producer = ""
   string TTRHBuilder       =   "WithTrackAngle"
   bool TrajectoryInEvent = false
