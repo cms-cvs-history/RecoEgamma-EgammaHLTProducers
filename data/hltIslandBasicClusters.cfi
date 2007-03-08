@@ -3,6 +3,8 @@ module hltIslandBasicClusters = EgammaHLTIslandClusterProducer
 {
     string VerbosityLevel = "ERROR"
 
+    bool doBarrel = true
+
     string barrelHitProducer   = "ecalRecHit"
     string endcapHitProducer   = "ecalRecHit"
 

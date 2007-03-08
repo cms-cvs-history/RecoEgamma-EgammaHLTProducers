@@ -4,8 +4,8 @@
 module hltDoubleElectronTrackIsol = EgammaHLTElectronTrackIsolationProducers {
 
   InputTag recoEcalCandidateProducer = hltDoubleElectronHcalIsolFilter
-  //InputTag trackProducer       = ctfWithMaterialTracks
-  InputTag trackProducer       = hltDoubleCtfWithMaterialTracks
+  InputTag trackProducer       = ctfWithMaterialTracks
+  //InputTag trackProducer       = hltDoubleCtfWithMaterialTracks
   InputTag electronProducer    = pixelMatchElectronsForHLT
 
   double egTrkIsoPtMin        = 1.5
