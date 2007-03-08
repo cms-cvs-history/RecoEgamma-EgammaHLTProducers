@@ -6,8 +6,8 @@
     string ecalhitcollection = "EcalRecHitsEB"
 
     # clustering parameters
-    double HybridBarrelSeedThr = 4.0
-    int32 step = 17
+    double HybridBarrelSeedThr = 1.0
+    int32 step = 10
     double ethresh = .1
     double ewing = 1.0
     double eseed = .35
@@ -20,6 +20,10 @@
 
     # L1 trigger candidate matching parameters
     InputTag l1Tag = l1extraParticles:Isolated
+    double l1LowerThr = 0.
+    double l1UpperThr = 999.
+    double regionEtaMargin = 0.
+    double regionPhiMargin = 0.
 
     # output collections
     string clustershapecollection = ""
