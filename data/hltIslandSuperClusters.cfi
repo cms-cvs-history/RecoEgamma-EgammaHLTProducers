@@ -1,5 +1,5 @@
 #
-# $Id: hltIslandSuperClusters.cfi,v 1.1 2007/03/07 21:11:37 futyand Exp $
+# $Id: hltIslandSuperClusters.cfi,v 1.2 2007/03/08 11:05:40 futyand Exp $
 #
 # Island SuperCluster producer
 module hltIslandSuperClusters = SuperClusterProducer
@@ -20,4 +20,7 @@ module hltIslandSuperClusters = SuperClusterProducer
     double endcapEtaSearchRoad = 0.14
     double endcapPhiSearchRoad = 0.40
     double seedTransverseEnergyThreshold = 4.00
+
+    bool doBarrel = true
+    bool doEndcaps = true
 }

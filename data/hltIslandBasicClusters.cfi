@@ -4,6 +4,8 @@ module hltIslandBasicClusters = EgammaHLTIslandClusterProducer
     string VerbosityLevel = "ERROR"
 
     bool doBarrel = true
+    bool doEndcaps = true
+    bool doIsolated = true
 
     string barrelHitProducer   = "ecalRecHit"
     string endcapHitProducer   = "ecalRecHit"
@@ -24,9 +26,11 @@ module hltIslandBasicClusters = EgammaHLTIslandClusterProducer
     double posCalc_w0 = 4.2
     double posCalc_x0 = 0.89
 
-    InputTag l1Tag = l1extraParticles:Isolated
+    InputTag l1TagIsolated = l1extraParticles:Isolated
+    InputTag l1TagNonIsolated = l1extraParticles:NonIsolated
     double l1LowerThr = 0.
     double l1UpperThr = 999.
+    double l1LowerThrIgnoreIsolation = 999.
     double regionEtaMargin = 0.14
     double regionPhiMargin = 0.4
 

@@ -1,6 +1,9 @@
 # Producer for Hybrid BasicClusters and SuperClusters
   module hltHybridSuperClusters = EgammaHLTHybridClusterProducer
   {
+
+    bool doIsolated = true
+
     # input collection
     string ecalhitproducer = "ecalRecHit"
     string ecalhitcollection = "EcalRecHitsEB"
@@ -19,11 +22,14 @@
     double posCalc_x0 = 0.89
 
     # L1 trigger candidate matching parameters
-    InputTag l1Tag = l1extraParticles:Isolated
+    InputTag l1TagIsolated = l1extraParticles:Isolated
+    InputTag l1TagNonIsolated = l1extraParticles:NonIsolated
     double l1LowerThr = 0.
     double l1UpperThr = 999.
-    double regionEtaMargin = 0.
-    double regionPhiMargin = 0.
+    double l1LowerThrIgnoreIsolation = 999.
+
+    double regionEtaMargin = 0.14
+    double regionPhiMargin = 0.4
 
     # output collections
     string clustershapecollection = ""
