@@ -1,0 +1,22 @@
+include "RecoTracker/CkfPattern/data/CkfTrajectoryBuilderESProducer.cff"
+#TrajectoryBuilder
+es_module TrajectoryBuilderForPixelMatchElectronsL1NonIso = CkfTrajectoryBuilder from "RecoTracker/CkfPattern/data/CkfTrajectoryBuilderESProducer.cfi"
+
+replace TrajectoryBuilderForPixelMatchElectronsL1NonIso.ComponentName = "TrajectoryBuilderForPixelMatchElectronsL1NonIso"
+
+replace TrajectoryBuilderForPixelMatchElectronsL1NonIso.estimator = "egammaChi2"
+
+
+#pixelMatchedElectrons
+include "RecoEgamma/EgammaHLTProducers/data/pixelMatchElectronsForHLT.cfi"
+module pixelMatchElectronsL1NonIsoForHLT = pixelMatchElectronsForHLT from "RecoEgamma/EgammaHLTProducers/data/pixelMatchElectronsForHLT.cfi"
+
+replace pixelMatchElectronsL1NonIsoForHLT.TrackBarrelLabel = "ctfL1NonIsoWithMaterialTracksBarrel"
+#  string TrackBarrelProducer = ""
+replace pixelMatchElectronsL1NonIsoForHLT.TrackEndcapLabel = "ctfL1NonIsoWithMaterialTracksEndcap"
+#  string TrackEndcapProducer = ""
+  replace pixelMatchElectronsL1NonIsoForHLT.SCLBarrelLabel            = "l1NonIsoElectronPixelSeeds"
+  replace pixelMatchElectronsL1NonIsoForHLT.SCLBarrelProducer         = "correctedHybridSuperClustersL1NonIsolated"
+  replace pixelMatchElectronsL1NonIsoForHLT.SCLEndcapLabel            = "l1NonIsoElectronPixelSeeds"
+  replace pixelMatchElectronsL1NonIsoForHLT.SCLEndcapProducer         = "correctedEndcapSuperClustersWithPreshowerL1NonIsolated"
+  replace pixelMatchElectronsL1NonIsoForHLT.TrajectoryBuilder    = "TrajectoryBuilderForPixelMatchElectronsL1NonIso"

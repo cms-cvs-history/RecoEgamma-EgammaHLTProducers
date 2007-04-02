@@ -16,33 +16,41 @@ include "RecoEcal/EgammaClusterProducers/data/geometryForClustering.cff"
 # island clustering sequence
 
 ########### BASIC CLUSTERS
-include "RecoEgamma/EgammaHLTProducers/data/hltIslandBasicClusters.cfi"
+#MARCO include "RecoEgamma/EgammaHLTProducers/data/hltIslandBasicClusters.cfi"
+
 
 ###--------- ENDCAP 
 module  hltIslandBasicClustersEndcapL1Isolated = hltIslandBasicClusters from "RecoEgamma/EgammaHLTProducers/data/hltIslandBasicClusters.cfi"
 
 replace hltIslandBasicClustersEndcapL1Isolated.l1LowerThr = 11.5
 replace hltIslandBasicClustersEndcapL1Isolated.doBarrel = false
+replace hltIslandBasicClustersEndcapL1Isolated.doEndcaps = true
+replace hltIslandBasicClustersEndcapL1Isolated.doIsolated = true
 ###--------- BARREL 
 module hltIslandBasicClustersBarrelL1Isolated = hltIslandBasicClusters from "RecoEgamma/EgammaHLTProducers/data/hltIslandBasicClusters.cfi"
 replace hltIslandBasicClustersBarrelL1Isolated.l1LowerThr = 1000.
 replace hltIslandBasicClustersBarrelL1Isolated.doBarrel = true
+replace hltIslandBasicClustersBarrelL1Isolated.doEndcaps = false
+replace hltIslandBasicClustersBarrelL1Isolated.doIsolated = true
 
 ########### SUPER CLUSTERS
 
-include "RecoEgamma/EgammaHLTProducers/data/hltIslandSuperClusters.cfi"
+#include "RecoEgamma/EgammaHLTProducers/data/hltIslandSuperClusters.cfi"
+
 module hltIslandSuperClustersL1Isolated = hltIslandSuperClusters from "RecoEgamma/EgammaHLTProducers/data/hltIslandSuperClusters.cfi"
 replace hltIslandSuperClustersL1Isolated.endcapClusterProducer = hltIslandBasicClustersEndcapL1Isolated
 replace hltIslandSuperClustersL1Isolated.barrelClusterProducer = hltIslandBasicClustersBarrelL1Isolated
+replace hltIslandSuperClustersL1Isolated.doBarrel = false
+
 
 # Energy scale correction for Island SuperClusters
 
 #include "RecoEcal/EgammaClusterProducers/data/correctedIslandSuperClusters.cfi"
 ###--------- ENDCAP 
-module correctedIslandEndcapSuperClustersL1Isolated = correctedIslandEndcapSuperClusters from "RecoEcal/EgammaClusterProducers/data/correctedIslandSuperClusters.cfi"
+module correctedIslandEndcapSuperClustersL1Isolated = correctedIslandEndcapSuperClusters from "RecoEcal/EgammaClusterProducers/data/correctedIslandEndcapSuperClusters.cfi"
 replace correctedIslandEndcapSuperClustersL1Isolated.rawSuperClusterProducer = hltIslandSuperClustersL1Isolated
 ###--------- BARREL
-module correctedIslandBarrelSuperClustersL1Isolated = correctedIslandBarrelSuperClusters from "RecoEcal/EgammaClusterProducers/data/correctedIslandSuperClusters.cfi"
+module correctedIslandBarrelSuperClustersL1Isolated = correctedIslandBarrelSuperClusters from "RecoEcal/EgammaClusterProducers/data/correctedIslandBarrelSuperClusters.cfi"
 replace correctedIslandBarrelSuperClustersL1Isolated.rawSuperClusterProducer = hltIslandSuperClustersL1Isolated
 
 
@@ -56,13 +64,13 @@ replace correctedIslandBarrelSuperClustersL1Isolated.rawSuperClusterProducer = h
 
 ##### hybrid clustering sequence
 
-include "RecoEgamma/EgammaHLTProducers/data/hltHybridSuperClusters.cfi"
+#include "RecoEgamma/EgammaHLTProducers/data/hltHybridSuperClusters.cfi"
 module hltHybridSuperClustersL1Isolated = hltHybridSuperClusters from "RecoEgamma/EgammaHLTProducers/data/hltHybridSuperClusters.cfi"
 replace hltHybridSuperClustersL1Isolated.l1LowerThr = 11.5
 replace hltHybridSuperClustersL1Isolated.HybridBarrelSeedThr = 1.5
 
 # Energy scale correction for Hybrid SuperClusters
-include "RecoEcal/EgammaClusterProducers/data/correctedHybridSuperClusters.cfi"
+#include "RecoEcal/EgammaClusterProducers/data/correctedHybridSuperClusters.cfi"
 module correctedHybridSuperClustersL1Isolated = correctedHybridSuperClusters from "RecoEcal/EgammaClusterProducers/data/correctedHybridSuperClusters.cfi"
 replace correctedHybridSuperClustersL1Isolated.rawSuperClusterProducer = hltHybridSuperClustersL1Isolated
 
@@ -76,7 +84,7 @@ replace correctedHybridSuperClustersL1Isolated.rawSuperClusterProducer = hltHybr
 # preshower clustering sequence
 #include "RecoEcal/EgammaClusterProducers/data/preshowerClusteringSequence.cff"
 
-include "RecoEcal/EgammaClusterProducers/data/correctedEndcapSuperClustersWithPreshower.cfi"
+#include "RecoEcal/EgammaClusterProducers/data/correctedEndcapSuperClustersWithPreshower.cfi"
 module correctedEndcapSuperClustersWithPreshowerL1Isolated = correctedEndcapSuperClustersWithPreshower from "RecoEcal/EgammaClusterProducers/data/correctedEndcapSuperClustersWithPreshower.cfi"
 replace correctedEndcapSuperClustersWithPreshowerL1Isolated.endcapSClusterProducer = correctedIslandEndcapSuperClustersL1Isolated
 
@@ -96,7 +104,7 @@ sequence l1IsolatedEcalClusters = {
                           ,hltHybridSuperClustersL1Isolated
 	                  ,hltIslandSuperClustersL1Isolated
 	                  ,correctedIslandEndcapSuperClustersL1Isolated
-	                  ,correctedIslandBarrelSuperClustersL1Isolated  #NOT NEEDED
+	                  #,correctedIslandBarrelSuperClustersL1Isolated  #NOT NEEDED
                           ,correctedHybridSuperClustersL1Isolated
                           ,correctedEndcapSuperClustersWithPreshowerL1Isolated
 		          #,hltIslandSuperClusters
