@@ -16,7 +16,7 @@ include "RecoEcal/EgammaClusterProducers/data/geometryForClustering.cff"
 # island clustering sequence
 
 ########### BASIC CLUSTERS
-#MARCO include "RecoEgamma/EgammaHLTProducers/data/hltIslandBasicClusters.cfi"
+# include "RecoEgamma/EgammaHLTProducers/data/hltIslandBasicClusters.cfi"
 
 
 ###--------- ENDCAP 
@@ -39,8 +39,7 @@ replace hltIslandBasicClustersBarrelL1NonIsolated.doIsolated = false
 module hltIslandSuperClustersL1NonIsolated = hltIslandSuperClusters from "RecoEgamma/EgammaHLTProducers/data/hltIslandSuperClusters.cfi"
 replace hltIslandSuperClustersL1NonIsolated.endcapClusterProducer = hltIslandBasicClustersEndcapL1NonIsolated
 replace hltIslandSuperClustersL1NonIsolated.barrelClusterProducer = hltIslandBasicClustersBarrelL1NonIsolated
-replace hltIslandSuperClustersL1NonIsolated.doBarrel = false
-
+replace hltIslandSuperClustersL1NonIsolated.doBarrel = true
 
 # Energy scale correction for Island SuperClusters
 
@@ -77,6 +76,7 @@ replace hltHybridSuperClustersL1NonIsolated.HybridBarrelSeedThr = 1.5
 #include "RecoEcal/EgammaClusterProducers/data/correctedHybridSuperClusters.cfi"
 module correctedHybridSuperClustersL1NonIsolated = correctedHybridSuperClusters from "RecoEcal/EgammaClusterProducers/data/correctedHybridSuperClusters.cfi"
 replace correctedHybridSuperClustersL1NonIsolated.rawSuperClusterProducer = hltHybridSuperClustersL1NonIsolated
+replace correctedHybridSuperClustersL1NonIsolated.etThresh = 11.0
 
 # hybrid clustering sequence
 #sequence hybridClusteringSequence = {
@@ -91,6 +91,7 @@ replace correctedHybridSuperClustersL1NonIsolated.rawSuperClusterProducer = hltH
 #include "RecoEcal/EgammaClusterProducers/data/correctedEndcapSuperClustersWithPreshower.cfi"
 module correctedEndcapSuperClustersWithPreshowerL1NonIsolated = correctedEndcapSuperClustersWithPreshower from "RecoEcal/EgammaClusterProducers/data/correctedEndcapSuperClustersWithPreshower.cfi"
 replace correctedEndcapSuperClustersWithPreshowerL1NonIsolated.endcapSClusterProducer = correctedIslandEndcapSuperClustersL1NonIsolated
+replace correctedEndcapSuperClustersWithPreshowerL1NonIsolated.etThresh = 11.0
 
 
 # create path with all clustering algos
@@ -108,7 +109,7 @@ sequence l1NonIsolatedEcalClusters = {
                           ,hltHybridSuperClustersL1NonIsolated
 	                  ,hltIslandSuperClustersL1NonIsolated
 	                  ,correctedIslandEndcapSuperClustersL1NonIsolated
-	                  #,correctedIslandBarrelSuperClustersL1NonIsolated  #NOT NEEDED
+	                  ,correctedIslandBarrelSuperClustersL1NonIsolated
                           ,correctedHybridSuperClustersL1NonIsolated
                           ,correctedEndcapSuperClustersWithPreshowerL1NonIsolated
 		          #,hltIslandSuperClusters

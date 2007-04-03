@@ -31,7 +31,7 @@ module hltIslandBasicClusters = EgammaHLTIslandClusterProducer
     double l1LowerThr = 0.
     double l1UpperThr = 999.
     double l1LowerThrIgnoreIsolation = 999.
-    double regionEtaMargin = 0.14
+    double regionEtaMargin = 0.3 #MARCO 0.14
     double regionPhiMargin = 0.4
 
     string clustershapecollectionEB = "islandBarrelShape"

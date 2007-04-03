@@ -40,7 +40,7 @@ replace hltIslandBasicClustersBarrelL1Isolated.doIsolated = true
 module hltIslandSuperClustersL1Isolated = hltIslandSuperClusters from "RecoEgamma/EgammaHLTProducers/data/hltIslandSuperClusters.cfi"
 replace hltIslandSuperClustersL1Isolated.endcapClusterProducer = hltIslandBasicClustersEndcapL1Isolated
 replace hltIslandSuperClustersL1Isolated.barrelClusterProducer = hltIslandBasicClustersBarrelL1Isolated
-replace hltIslandSuperClustersL1Isolated.doBarrel = false
+replace hltIslandSuperClustersL1Isolated.doBarrel = true 
 
 
 # Energy scale correction for Island SuperClusters
@@ -73,6 +73,7 @@ replace hltHybridSuperClustersL1Isolated.HybridBarrelSeedThr = 1.5
 #include "RecoEcal/EgammaClusterProducers/data/correctedHybridSuperClusters.cfi"
 module correctedHybridSuperClustersL1Isolated = correctedHybridSuperClusters from "RecoEcal/EgammaClusterProducers/data/correctedHybridSuperClusters.cfi"
 replace correctedHybridSuperClustersL1Isolated.rawSuperClusterProducer = hltHybridSuperClustersL1Isolated
+replace correctedHybridSuperClustersL1Isolated.etThresh = 15.0
 
 # hybrid clustering sequence
 #sequence hybridClusteringSequence = {
@@ -87,7 +88,7 @@ replace correctedHybridSuperClustersL1Isolated.rawSuperClusterProducer = hltHybr
 #include "RecoEcal/EgammaClusterProducers/data/correctedEndcapSuperClustersWithPreshower.cfi"
 module correctedEndcapSuperClustersWithPreshowerL1Isolated = correctedEndcapSuperClustersWithPreshower from "RecoEcal/EgammaClusterProducers/data/correctedEndcapSuperClustersWithPreshower.cfi"
 replace correctedEndcapSuperClustersWithPreshowerL1Isolated.endcapSClusterProducer = correctedIslandEndcapSuperClustersL1Isolated
-
+replace correctedEndcapSuperClustersWithPreshowerL1Isolated.etThresh = 15.0
 
 # create path with all clustering algos
 # NB: preshower MUST be run after island clustering in the endcap
@@ -104,7 +105,7 @@ sequence l1IsolatedEcalClusters = {
                           ,hltHybridSuperClustersL1Isolated
 	                  ,hltIslandSuperClustersL1Isolated
 	                  ,correctedIslandEndcapSuperClustersL1Isolated
-	                  #,correctedIslandBarrelSuperClustersL1Isolated  #NOT NEEDED
+	                  ,correctedIslandBarrelSuperClustersL1Isolated 
                           ,correctedHybridSuperClustersL1Isolated
                           ,correctedEndcapSuperClustersWithPreshowerL1Isolated
 		          #,hltIslandSuperClusters
