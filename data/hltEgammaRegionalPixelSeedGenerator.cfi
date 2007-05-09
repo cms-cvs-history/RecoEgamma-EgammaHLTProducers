@@ -8,4 +8,6 @@ module hltEgammaRegionalPixelSeedGenerator = EgammaHLTRegionalPixelSeedGenerator
     double deltaPhiRegion = 0.3 # .177 #1.0
     string TTRHBuilder = "WithTrackAngle"
     InputTag candTag =  hltRecoEcalCandidate
+    InputTag candTagEle = pixelMatchElectrons
+    bool UseZInVertex = false
 }
