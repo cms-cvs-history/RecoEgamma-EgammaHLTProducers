@@ -4,7 +4,7 @@ module l1IsoElectronsRegionalPixelSeedGenerator = hltEgammaRegionalPixelSeedGene
 replace l1IsoElectronsRegionalPixelSeedGenerator.candTag =  l1IsoRecoEcalCandidate
 replace l1IsoElectronsRegionalPixelSeedGenerator.candTagEle =  pixelMatchElectronsL1IsoForHLT
 replace l1IsoElectronsRegionalPixelSeedGenerator.UseZInVertex =  true
-replace l1IsoElectronsRegionalPixelSeedGenerator.originHalfLength = 0.0005  
+replace l1IsoElectronsRegionalPixelSeedGenerator.originHalfLength = 0.5  
 
 #   string HitProducer = "siPixelRecHits"
 #    double ptMin = 1.0
