@@ -1,5 +1,5 @@
 #
-# $Id: hltIslandSuperClusters.cfi,v 1.3 2007/03/26 16:39:08 mpieri Exp $
+# $Id: hltIslandSuperClusters.cfi,v 1.4 2007/05/23 12:54:28 monicava Exp $
 #
 # Island SuperCluster producer
 module hltIslandSuperClusters = SuperClusterProducer
@@ -19,7 +19,7 @@ module hltIslandSuperClusters = SuperClusterProducer
     double barrelPhiSearchRoad = 0.20
     double endcapEtaSearchRoad = 0.14
     double endcapPhiSearchRoad = 0.40
-    double seedTransverseEnergyThreshold = 2.00
+    double seedTransverseEnergyThreshold = 1.5
 
     bool doBarrel = true
     bool doEndcaps = true
