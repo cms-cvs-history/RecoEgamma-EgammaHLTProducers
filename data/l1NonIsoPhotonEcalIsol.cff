@@ -3,7 +3,7 @@ module l1NonIsolatedPhotonEcalIsol  = hltPhotonEcalIsol from "RecoEgamma/EgammaH
 
  replace l1NonIsolatedPhotonEcalIsol.bcBarrelProducer          = hltIslandBasicClustersBarrelL1NonIsolated:islandBarrelBasicClusters
  replace l1NonIsolatedPhotonEcalIsol.bcEndcapProducer          = hltIslandBasicClustersEndcapL1NonIsolated:islandEndcapBasicClusters
- replace l1NonIsolatedPhotonEcalIsol.scIslandBarrelProducer    = correctedHybridSuperClustersL1NonIsolated
+ replace l1NonIsolatedPhotonEcalIsol.scIslandBarrelProducer    = correctedIslandBarrelSuperClustersL1NonIsolated
  replace l1NonIsolatedPhotonEcalIsol.scIslandEndcapProducer    = correctedEndcapSuperClustersWithPreshowerL1NonIsolated
 
 
