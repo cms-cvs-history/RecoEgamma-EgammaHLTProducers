@@ -1,11 +1,13 @@
 
   # -- needed for regional unpacking:
   include "L1TriggerConfig/L1GeometryProducers/data/l1CaloGeometry.cfi"
-  es_source l1CaloGeomRecordSource = EmptyESSource {
-    string recordName = "L1CaloGeometryRecord"
-    vuint32 firstValid = { 1 }
-    bool iovIsRunNotTime = false
-  }
+  include "L1TriggerConfig/L1GeometryProducers/data/l1CaloGeomRecordSource.cff"
+
+#  es_source l1CaloGeomRecordSource = EmptyESSource {
+#    string recordName = "L1CaloGeometryRecord"
+#    vuint32 firstValid = { 1 }
+#    bool iovIsRunNotTime = false
+#  }
 
 
  module ecalRegionalEgammaFEDs = EcalListOfFEDSProducer {
