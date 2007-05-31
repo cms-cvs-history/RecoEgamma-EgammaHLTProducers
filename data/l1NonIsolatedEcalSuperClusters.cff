@@ -103,6 +103,21 @@ replace correctedEndcapSuperClustersWithPreshowerL1NonIsolated.etThresh = 10.0
 #                          preshowerClusteringSequence
 #                        }
 
+
+
+
+##    string barrelHitProducer   = "ecalRegionalEgammaRecHit"
+##    string endcapHitProducer   = "ecalRegionalEgammaRecHit"
+    replace hltIslandBasicClustersEndcapL1NonIsolated.endcapHitProducer = "ecalRegionalEgammaRecHit"
+    replace hltIslandBasicClustersBarrelL1NonIsolated.barrelHitProducer = "ecalRegionalEgammaRecHit"
+    replace correctedIslandEndcapSuperClustersL1NonIsolated.recHitProducer = "ecalRegionalEgammaRecHit"
+    replace correctedIslandBarrelSuperClustersL1NonIsolated.recHitProducer = "ecalRegionalEgammaRecHit"
+    replace hltHybridSuperClustersL1NonIsolated.ecalhitproducer = "ecalRegionalEgammaRecHit"
+    replace correctedHybridSuperClustersL1NonIsolated.recHitProducer = "ecalRegionalEgammaRecHit"
+
+
+
+
 sequence l1NonIsolatedEcalClusters = {
         # hltIslandBasicClusters 
 	hltIslandBasicClustersEndcapL1NonIsolated
