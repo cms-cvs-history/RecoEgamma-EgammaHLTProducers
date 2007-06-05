@@ -11,7 +11,7 @@
 
  module ecalRegionalMuonsFEDs = EcalListOfFEDSProducer {
 
-   untracked bool debug = true
+   untracked bool debug = false
 
    untracked bool EGamma = false
    untracked bool Muon   = true
