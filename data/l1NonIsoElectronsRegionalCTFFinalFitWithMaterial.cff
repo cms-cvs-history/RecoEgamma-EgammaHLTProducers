@@ -44,4 +44,4 @@ include "RecoTracker/TransientTrackingRecHit/data/TransientTrackingRecHitBuilder
 #include "RecoEgamma/EgammaHLTProducers/data/hltEgammaRegionalCTFFinalFitWithMaterial.cfi"
 module l1NonIsoElectronsRegionalCTFFinalFitWithMaterial = hltEgammaRegionalCTFFinalFitWithMaterial from "RecoEgamma/EgammaHLTProducers/data/hltEgammaRegionalCTFFinalFitWithMaterial.cfi"
 
-replace l1NonIsoElectronsRegionalCTFFinalFitWithMaterial.src = l1NonIsoElectronsRegionalCkfTrackCandidates
+replace l1NonIsoElectronsRegionalCTFFinalFitWithMaterial.src = "l1NonIsoElectronsRegionalCkfTrackCandidates"
