@@ -16,4 +16,4 @@ include "RecoTracker/CkfPattern/data/GroupedCkfTrajectoryBuilderESProducer.cff"
 
 include "RecoEgamma/EgammaHLTProducers/data/hltEgammaRegionalCkfTrackCandidates.cfi"
 module  l1NonIsoEgammaRegionalCkfTrackCandidates = hltEgammaRegionalCkfTrackCandidates from "RecoEgamma/EgammaHLTProducers/data/hltEgammaRegionalCkfTrackCandidates.cfi"
-replace l1NonIsoEgammaRegionalCkfTrackCandidates.SeedProducer = l1NonIsoEgammaRegionalPixelSeedGenerator
+replace l1NonIsoEgammaRegionalCkfTrackCandidates.SeedProducer = "l1NonIsoEgammaRegionalPixelSeedGenerator"
