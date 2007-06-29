@@ -1,14 +1,16 @@
 #
 # This cfi should be included to run the CkfTrackCandidateMaker 
 #
-
 module hltEgammaRegionalCkfTrackCandidates = CkfTrackCandidateMaker
   {	
      #bool   seedCleaning         = false
      string SeedProducer          = "hltEgammaRegionalPixelSeedGenerator"
      string SeedLabel             = ""
-     string TrajectoryBuilder    = "CkfTrajectoryBuilder"
-
+     string TrajectoryBuilder     = "CkfTrajectoryBuilder"
+     
+     ## set it as "none" to avoid redundant seed cleaner
+     string RedundantSeedCleaner  = "CachingSeedCleanerBySharedInput"
+     #string RedundantSeedCleaner  = "none"
 
 # nested parameter set for TransientInitialStateEstimator
      PSet TransientInitialStateEstimatorParameters =
@@ -17,4 +19,9 @@ module hltEgammaRegionalCkfTrackCandidates = CkfTrackCandidateMaker
          string propagatorOppositeTISE = "PropagatorWithMaterialOpposite"
       }	
 
+  PSet NavigationPSet = {
+	       string ComponentName = "SimpleNavigationSchool"
   }
+
+  }
+

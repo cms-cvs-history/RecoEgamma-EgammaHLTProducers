@@ -9,6 +9,8 @@ module hltRelaxedDoubleRegionalCkfTrackCandidates = CkfTrackCandidateMaker
      string SeedLabel             = ""
      string TrajectoryBuilder    = "CkfTrajectoryBuilder"
 
+     string RedundantSeedCleaner  = "CachingSeedCleanerBySharedInput"
+     #string RedundantSeedCleaner  = "none"
 
 # nested parameter set for TransientInitialStateEstimator
      PSet TransientInitialStateEstimatorParameters =
@@ -16,5 +18,9 @@ module hltRelaxedDoubleRegionalCkfTrackCandidates = CkfTrackCandidateMaker
          string propagatorAlongTISE    = "PropagatorWithMaterial"
          string propagatorOppositeTISE = "PropagatorWithMaterialOpposite"
       }	
+
+  PSet NavigationPSet = {
+	       string ComponentName = "SimpleNavigationSchool"
+  }
 
   }

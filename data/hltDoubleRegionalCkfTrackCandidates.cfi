@@ -8,7 +8,9 @@ module hltDoubleRegionalCkfTrackCandidates = CkfTrackCandidateMaker
      string SeedProducer          = "hltDoubleRegionalPixelSeedGenerator"
      string SeedLabel             = ""
      string TrajectoryBuilder    = "CkfTrajectoryBuilder"
-
+     ## set it as "none" to avoid redundant seed cleaner
+     string RedundantSeedCleaner  = "CachingSeedCleanerBySharedInput"
+     #string RedundantSeedCleaner  = "none"
 
 # nested parameter set for TransientInitialStateEstimator
      PSet TransientInitialStateEstimatorParameters =
@@ -16,5 +18,10 @@ module hltDoubleRegionalCkfTrackCandidates = CkfTrackCandidateMaker
          string propagatorAlongTISE    = "PropagatorWithMaterial"
          string propagatorOppositeTISE = "PropagatorWithMaterialOpposite"
       }	
+
+  PSet NavigationPSet = {
+	       string ComponentName = "SimpleNavigationSchool"
+  }
+
 
   }
