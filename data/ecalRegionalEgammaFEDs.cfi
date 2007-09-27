@@ -16,6 +16,7 @@
 
    untracked bool EGamma = true
    untracked bool Muon   = false
+   untracked bool Jets   = false
 
    untracked bool EM_doIsolated = true
    untracked bool EM_doNonIsolated = true

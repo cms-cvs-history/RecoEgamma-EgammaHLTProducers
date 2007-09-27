@@ -15,6 +15,7 @@
 
    untracked bool EGamma = false
    untracked bool Muon   = true
+   untracked bool Jets   = false
 
     # untracked double MU_regionEtaMargin = 1.0
     # untracked double MU_regionPhiMargin = 1.0
