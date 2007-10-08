@@ -9,7 +9,7 @@
 #  }
 
 
- module ecalRegionalJetsFEDs = EcalListOfFEDSProducer {
+ module ecalRegionalTausFEDs = EcalListOfFEDSProducer {
 
    untracked bool debug = false
 
@@ -17,14 +17,14 @@
    untracked bool Muon   = false
    untracked bool Jets   = true
 
-   untracked bool JETS_doCentral = true
-   untracked bool JETS_doForward = true
+   untracked bool JETS_doCentral = false
+   untracked bool JETS_doForward = false
    untracked bool JETS_doTau = true
 
     # untracked double JETS_regionEtaMargin = 10.
     # untracked double JETS_regionPhiMargin = 3.1416
 
-    untracked double Ptmin_jets = 50
+    untracked double Ptmin_jets = 20
 
        untracked double JETS_regionEtaMargin = 1
        untracked double JETS_regionPhiMargin = 1
