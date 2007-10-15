@@ -6,6 +6,8 @@ replace TrajectoryBuilderForPixelMatchElectronsL1Iso.ComponentName = "Trajectory
 
 replace TrajectoryBuilderForPixelMatchElectronsL1Iso.estimator = "egammaChi2"
 
+# Navigation School record
+include "RecoTracker/TkNavigation/data/NavigationSchoolESProducer.cff"
 
 #pixelMatchedElectrons
 include "RecoEgamma/EgammaHLTProducers/data/pixelMatchElectronsForHLT.cfi"

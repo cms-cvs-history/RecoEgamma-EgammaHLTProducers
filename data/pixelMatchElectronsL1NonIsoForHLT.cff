@@ -5,7 +5,8 @@ es_module TrajectoryBuilderForPixelMatchElectronsL1NonIso = CkfTrajectoryBuilder
 replace TrajectoryBuilderForPixelMatchElectronsL1NonIso.ComponentName = "TrajectoryBuilderForPixelMatchElectronsL1NonIso"
 
 replace TrajectoryBuilderForPixelMatchElectronsL1NonIso.estimator = "egammaChi2"
-
+# Navigation School record
+include "RecoTracker/TkNavigation/data/NavigationSchoolESProducer.cff"
 
 #pixelMatchedElectrons
 include "RecoEgamma/EgammaHLTProducers/data/pixelMatchElectronsForHLT.cfi"
