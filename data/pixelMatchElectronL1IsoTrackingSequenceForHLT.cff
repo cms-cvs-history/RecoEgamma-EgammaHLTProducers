@@ -1,10 +1,10 @@
 # electron tracking sequence after pixel seeding
-# $Id: pixelMatchElectronTrackingSequenceForHLT.cff,v 1.3 2007/02/23 11:36:17 monicava Exp $
+# $Id: pixelMatchElectronL1IsoTrackingSequenceForHLT.cff,v 1.1 2007/03/23 17:20:40 ghezzi Exp $
 
 sequence pixelMatchElectronL1IsoTrackingSequenceForHLT = {
-                                                     ckfL1IsoTrackCandidatesBarrel &
-                                                     ckfL1IsoTrackCandidatesEndcap &
-                                                     ctfL1IsoWithMaterialTracksBarrel &
-                                                     ctfL1IsoWithMaterialTracksEndcap &
+                                                     ckfL1IsoTrackCandidates &
+                                                     //ckfL1IsoTrackCandidatesEndcap &
+                                                     ctfL1IsoWithMaterialTracks &
+                                                     //ctfL1IsoWithMaterialTracksEndcap &
                                                      pixelMatchElectronsL1IsoForHLT
                                                      }
