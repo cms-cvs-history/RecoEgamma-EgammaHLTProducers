@@ -7,10 +7,14 @@ module hltEgammaRegionalCkfTrackCandidates = CkfTrackCandidateMaker
      string SeedProducer          = "hltEgammaRegionalPixelSeedGenerator"
      string SeedLabel             = ""
      string TrajectoryBuilder     = "CkfTrajectoryBuilder"
-     
+
+     string TrajectoryCleaner     = "TrajectoryCleanerBySharedHits"
+
      ## set it as "none" to avoid redundant seed cleaner
      string RedundantSeedCleaner  = "CachingSeedCleanerBySharedInput"
      #string RedundantSeedCleaner  = "none"
+
+ string NavigationSchool      = "SimpleNavigationSchool"
 
 # nested parameter set for TransientInitialStateEstimator
      PSet TransientInitialStateEstimatorParameters =
@@ -19,9 +23,9 @@ module hltEgammaRegionalCkfTrackCandidates = CkfTrackCandidateMaker
          string propagatorOppositeTISE = "PropagatorWithMaterialOpposite"
       }	
 
-  PSet NavigationPSet = {
-	       string ComponentName = "SimpleNavigationSchool"
-  }
+#  PSet NavigationPSet = {
+#	       string ComponentName = "SimpleNavigationSchool"
+#  }
 
   }
 
