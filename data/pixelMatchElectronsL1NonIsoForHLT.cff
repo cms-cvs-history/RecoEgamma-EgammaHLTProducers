@@ -20,4 +20,4 @@ replace pixelMatchElectronsL1NonIsoForHLT.TrackLabel = "ctfL1NonIsoWithMaterialT
 #  replace pixelMatchElectronsL1NonIsoForHLT.SCLBarrelProducer         = "correctedHybridSuperClustersL1NonIsolated"
 #  replace pixelMatchElectronsL1NonIsoForHLT.SCLEndcapLabel            = "l1NonIsoElectronPixelSeeds"
 #  replace pixelMatchElectronsL1NonIsoForHLT.SCLEndcapProducer         = "correctedEndcapSuperClustersWithPreshowerL1NonIsolated"
-#  replace pixelMatchElectronsL1NonIsoForHLT.TrajectoryBuilder    = "TrajectoryBuilderForPixelMatchElectronsL1NonIso"
+  replace pixelMatchElectronsL1NonIsoForHLT.TrajectoryBuilder    = "TrajectoryBuilderForPixelMatchElectronsL1NonIso"
