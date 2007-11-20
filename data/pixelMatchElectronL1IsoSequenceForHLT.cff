@@ -1,4 +1,4 @@
-# $Id: pixelMatchElectronL1IsoSequenceForHLT.cff,v 1.2 2007/10/19 17:35:02 ghezzi Exp $
+# $Id: pixelMatchElectronL1IsoSequenceForHLT.cff,v 1.3 2007/11/19 14:44:55 ghezzi Exp $
 # create a sequence with all required modules and sources needed to make
 # pixel based electrons
 #
@@ -43,9 +43,9 @@ replace l1IsoElectronPixelSeeds.SeedConfiguration.ZMax1=15.0
 replace l1IsoElectronPixelSeeds.SeedConfiguration.ZMin2=-0.05
 replace l1IsoElectronPixelSeeds.SeedConfiguration.ZMax2=0.05
 
-replace l1IsoElectronPixelSeeds.superClusterBarrelProducer = "correctedHybridSuperClusters"
+replace l1IsoElectronPixelSeeds.superClusterBarrelProducer = "correctedHybridSuperClustersL1Isolated"
 #string superClusterBarrelLabel = ""
-replace l1IsoElectronPixelSeeds.superClusterEndcapProducer = "correctedEndcapSuperClustersWithPreshower"
+replace l1IsoElectronPixelSeeds.superClusterEndcapProducer = "correctedEndcapSuperClustersWithPreshowerL1Isolated"
 #string superClusterEndcapLabel = ""
 
 include "RecoEgamma/EgammaHLTProducers/data/pixelMatchElectronsL1IsoForHLT.cff"
