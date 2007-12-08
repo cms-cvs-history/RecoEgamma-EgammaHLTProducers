@@ -41,4 +41,13 @@ include "RecoTracker/TransientTrackingRecHit/data/TransientTrackingRecHitBuilder
 
 
 # TrackProducer
-include "RecoEgamma/EgammaHLTProducers/data/hltSingleCTFFinalFitWithMaterial.cfi"
+
+# start from standard configuration and chage parameter necessary for HLT only 
+module hltSingleCtfWithMaterialTracks = ctfWithMaterialTracks from "RecoTracker/TrackProducer/data/CTFFinalFitWithMaterial.cfi" 
+replace hltSingleCtfWithMaterialTracks.Fitter = "KFFittingSmoother"
+replace hltSingleCtfWithMaterialTracks.Propagator = "PropagatorWithMaterial"
+replace hltSingleCtfWithMaterialTracks.src = "hltSingleRegionalCkfTrackCandidates"
+replace hltSingleCtfWithMaterialTracks.producer = ""
+replace hltSingleCtfWithMaterialTracks.TTRHBuilder  =   "WithTrackAngle"
+replace hltSingleCtfWithMaterialTracks.TrajectoryInEvent = false
+

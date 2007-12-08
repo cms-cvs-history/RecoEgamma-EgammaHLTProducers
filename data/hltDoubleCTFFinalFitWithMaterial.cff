@@ -40,5 +40,12 @@ include "RecoLocalTracker/SiPixelRecHits/data/PixelCPEParmError.cfi"
 include "RecoTracker/TransientTrackingRecHit/data/TransientTrackingRecHitBuilder.cfi"
 
 
-# TrackProducer
-include "RecoEgamma/EgammaHLTProducers/data/hltDoubleCTFFinalFitWithMaterial.cfi"
+# start from standard configuration and chage parameter necessary for HLT only 
+module hltDoubleCtfWithMaterialTracks = ctfWithMaterialTracks from "RecoTracker/TrackProducer/data/CTFFinalFitWithMaterial.cfi" 
+replace hltDoubleCtfWithMaterialTracks.Fitter = "KFFittingSmoother"
+replace hltDoubleCtfWithMaterialTracks.Propagator = "PropagatorWithMaterial"
+replace hltDoubleCtfWithMaterialTracks.src = "hltDoubleRegionalCkfTrackCandidates"
+replace hltDoubleCtfWithMaterialTracks.producer = ""
+replace hltDoubleCtfWithMaterialTracks.TTRHBuilder  =   "WithTrackAngle"
+replace hltDoubleCtfWithMaterialTracks.TrajectoryInEvent = false
+

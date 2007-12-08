@@ -7,4 +7,5 @@ module hltEgammaRegionalCTFFinalFitWithMaterial = TrackProducer
   string producer = ""
   string TTRHBuilder       =   "WithTrackAngle"
   bool TrajectoryInEvent = false
+  bool useHitsSplitting = false
 }                                                                                                                                                           

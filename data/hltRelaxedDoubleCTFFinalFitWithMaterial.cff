@@ -41,4 +41,12 @@ include "RecoTracker/TransientTrackingRecHit/data/TransientTrackingRecHitBuilder
 
 
 # TrackProducer
-include "RecoEgamma/EgammaHLTProducers/data/hltRelaxedDoubleCTFFinalFitWithMaterial.cfi"
+
+# start from standard configuration and chage parameter necessary for HLT only 
+module hltRelaxedDoubleCtfWithMaterialTracks = ctfWithMaterialTracks from "RecoTracker/TrackProducer/data/CTFFinalFitWithMaterial.cfi" 
+replace hltRelaxedDoubleCtfWithMaterialTracks.Fitter = "KFFittingSmoother"
+replace hltRelaxedDoubleCtfWithMaterialTracks.Propagator = "PropagatorWithMaterial"
+replace hltRelaxedDoubleCtfWithMaterialTracks.src = "hltRelaxedDoubleRegionalCkfTrackCandidates"
+replace hltRelaxedDoubleCtfWithMaterialTracks.producer = ""
+replace hltRelaxedDoubleCtfWithMaterialTracks.TTRHBuilder  =   "WithTrackAngle"
+replace hltRelaxedDoubleCtfWithMaterialTracks.TrajectoryInEvent = false

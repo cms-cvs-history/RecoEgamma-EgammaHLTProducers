@@ -1,9 +1,0 @@
-module hltDoubleCtfWithMaterialTracks = TrackProducer 
-{
-  string Fitter = "KFFittingSmoother"   
-  string Propagator = "PropagatorWithMaterial" 
-  string src = "hltDoubleRegionalCkfTrackCandidates"
-  string producer = ""
-  string TTRHBuilder       =   "WithTrackAngle"
-  bool TrajectoryInEvent = false
-}
