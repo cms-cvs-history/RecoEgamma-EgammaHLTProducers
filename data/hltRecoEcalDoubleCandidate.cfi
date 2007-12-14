@@ -1,5 +1,0 @@
-module hltRecoEcalDoubleCandidate = EgammaHLTRecoEcalCandidateProducers {
-  InputTag scHybridBarrelProducer = correctedHybridSuperClusters
-  InputTag scIslandEndcapProducer = correctedEndcapSuperClustersWithPreshower
-  string recoEcalCandidateCollection =  ""
-}

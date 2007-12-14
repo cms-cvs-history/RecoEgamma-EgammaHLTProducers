@@ -9,15 +9,8 @@ replace TrajectoryBuilderForPixelMatchElectronsL1NonIso.estimator = "egammaChi2"
 include "RecoTracker/TkNavigation/data/NavigationSchoolESProducer.cff"
 
 #pixelMatchedElectrons
-#include "RecoEgamma/EgammaHLTProducers/data/pixelMatchElectronsForHLT.cfi"
+
 module pixelMatchElectronsL1NonIsoForHLT = pixelMatchElectronsForHLT from "RecoEgamma/EgammaHLTProducers/data/pixelMatchElectronsForHLT.cfi"
 
 replace pixelMatchElectronsL1NonIsoForHLT.TrackLabel = "ctfL1NonIsoWithMaterialTracks"
-#  string TrackBarrelProducer = ""
-#replace pixelMatchElectronsL1NonIsoForHLT.TrackEndcapLabel = "ctfL1NonIsoWithMaterialTracksEndcap"
-#  string TrackEndcapProducer = ""
-#  replace pixelMatchElectronsL1NonIsoForHLT.SCLBarrelLabel            = "l1NonIsoElectronPixelSeeds"
-#  replace pixelMatchElectronsL1NonIsoForHLT.SCLBarrelProducer         = "correctedHybridSuperClustersL1NonIsolated"
-#  replace pixelMatchElectronsL1NonIsoForHLT.SCLEndcapLabel            = "l1NonIsoElectronPixelSeeds"
-#  replace pixelMatchElectronsL1NonIsoForHLT.SCLEndcapProducer         = "correctedEndcapSuperClustersWithPreshowerL1NonIsolated"
-  replace pixelMatchElectronsL1NonIsoForHLT.TrajectoryBuilder    = "TrajectoryBuilderForPixelMatchElectronsL1NonIso"
+replace pixelMatchElectronsL1NonIsoForHLT.TrajectoryBuilder    = "TrajectoryBuilderForPixelMatchElectronsL1NonIso"

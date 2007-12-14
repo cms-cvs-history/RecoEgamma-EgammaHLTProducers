@@ -1,17 +1,11 @@
 # produce electrons based on matched pixel hits
-# $Id: pixelMatchElectronsForHLT.cfi,v 1.4 2006/12/13 17:42:22 monicava Exp $
+# $Id: pixelMatchElectronsForHLT.cfi,v 1.5 2007/10/19 17:35:02 ghezzi Exp $
 #
 
 module pixelMatchElectronsForHLT = EgammaHLTPixelMatchElectronProducers {
 
   string TrackLabel = "ctfWithMaterialTracksBarrel"
   string TrackProducer = ""
-#  string TrackEndcapLabel = "ctfWithMaterialTracksEndcap"
-#  string TrackEndcapProducer = ""
-#  string SCLBarrelLabel            = "electronPixelSeeds"
-#  string SCLBarrelProducer         = "correctedHybridSuperClusters"
-#  string SCLEndcapLabel            = "electronPixelSeeds"
-#  string SCLEndcapProducer         = "correctedEndcapSuperClustersWithPreshower"
   string TrajectoryBuilder    = "TrajectoryBuilderForPixelMatchElectrons"
 
   # nested parameter set for TransientInitialStateEstimator
