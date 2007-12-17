@@ -4,7 +4,7 @@ es_module TrajectoryBuilderForPixelMatchElectronsL1IsoLargeWindow = CkfTrajector
 
 replace TrajectoryBuilderForPixelMatchElectronsL1IsoLargeWindow.ComponentName = "TrajectoryBuilderForPixelMatchElectronsL1IsoLargeWindow"
 
-replace TrajectoryBuilderForPixelMatchElectronsL1IsoLargeWindow.estimator = "egammaChi2"
+replace TrajectoryBuilderForPixelMatchElectronsL1IsoLargeWindow.estimator = "egammaHLTChi2"
 
 # Navigation School record
 include "RecoTracker/TkNavigation/data/NavigationSchoolESProducer.cff"
