@@ -1,0 +1,60 @@
+block l1IsoElectronPixelSeedConfiguration = { 
+    double ePhiMin1=-0.025
+    double ePhiMax1=0.015
+    double pPhiMin1=-0.015
+    double pPhiMax1=0.025
+    double pPhiMin2=-0.001
+    double pPhiMax2=0.001
+    double ZMin1=-15.0
+    double ZMax1=15.0
+    double ZMin2=-0.05
+    double ZMax2=0.05
+    bool dynamicPhiRoad = false
+    double SCEtCut = 5.
+}
+
+block l1NonIsoElectronPixelSeedConfiguration = { 
+    double ePhiMin1=-0.025
+    double ePhiMax1=0.015
+    double pPhiMin1=-0.015
+    double pPhiMax1=0.025
+    double pPhiMin2=-0.001
+    double pPhiMax2=0.001
+    double ZMin1=-15.0
+    double ZMax1=15.0
+    double ZMin2=-0.05
+    double ZMax2=0.05
+    bool dynamicPhiRoad = false
+    double SCEtCut = 5.
+}
+
+block l1IsoLargeWindowElectronPixelSeedConfiguration = { 
+    double ePhiMin1=-0.035
+    double ePhiMax1=0.020
+    double pPhiMin1=-0.020
+    double pPhiMax1=0.035
+    double pPhiMin2=-0.002
+    double pPhiMax2=0.002
+    double ZMin1=-15.0
+    double ZMax1=15.0
+    double ZMin2=-0.1
+    double ZMax2=0.1
+    bool dynamicPhiRoad = false
+    double SCEtCut = 5.
+}
+
+block l1NonIsoLargeWindowElectronPixelSeedConfiguration = { 
+    double ePhiMin1=-0.035
+    double ePhiMax1=0.020
+    double pPhiMin1=-0.020
+    double pPhiMax1=0.035
+    double pPhiMin2=-0.002
+    double pPhiMax2=0.002
+    double ZMin1=-15.0
+    double ZMax1=15.0
+    double ZMin2=-0.1
+    double ZMax2=0.1
+    bool dynamicPhiRoad = false
+    double SCEtCut = 5.
+}
+

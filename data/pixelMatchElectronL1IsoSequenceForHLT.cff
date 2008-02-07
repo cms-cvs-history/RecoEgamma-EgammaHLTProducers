@@ -1,4 +1,4 @@
-# $Id: pixelMatchElectronL1IsoSequenceForHLT.cff,v 1.4 2007/11/20 13:40:05 ghezzi Exp $
+# $Id: pixelMatchElectronL1IsoSequenceForHLT.cff,v 1.5 2007/12/17 14:08:08 ghezzi Exp $
 # create a sequence with all required modules and sources needed to make
 # pixel based electrons
 #
@@ -33,16 +33,10 @@ include "RecoEgamma/EgammaHLTProducers/data/egammaHLTChi2MeasurementEstimatorESP
 
 include "RecoEgamma/EgammaElectronProducers/data/electronPixelSeeds.cfi"
 module l1IsoElectronPixelSeeds = electronPixelSeeds from "RecoEgamma/EgammaElectronProducers/data/electronPixelSeeds.cfi"
-replace l1IsoElectronPixelSeeds.SeedConfiguration.ePhiMin1=-0.025
-replace l1IsoElectronPixelSeeds.SeedConfiguration.ePhiMax1=0.015
-replace l1IsoElectronPixelSeeds.SeedConfiguration.pPhiMin1=-0.015
-replace l1IsoElectronPixelSeeds.SeedConfiguration.pPhiMax1=0.025
-replace l1IsoElectronPixelSeeds.SeedConfiguration.pPhiMin2=-0.001
-replace l1IsoElectronPixelSeeds.SeedConfiguration.pPhiMax2=0.001
-replace l1IsoElectronPixelSeeds.SeedConfiguration.ZMin1=-15.0
-replace l1IsoElectronPixelSeeds.SeedConfiguration.ZMax1=15.0
-replace l1IsoElectronPixelSeeds.SeedConfiguration.ZMin2=-0.05
-replace l1IsoElectronPixelSeeds.SeedConfiguration.ZMax2=0.05
+include "RecoEgamma/EgammaHLTProducers/data/pixelSeedConfigurationsForHLT.cfi"
+replace l1IsoElectronPixelSeeds.SeedConfiguration = {
+    using l1IsoElectronPixelSeedConfiguration
+}
 
 replace l1IsoElectronPixelSeeds.superClusterBarrelProducer = "correctedHybridSuperClustersL1Isolated"
 replace l1IsoElectronPixelSeeds.superClusterEndcapProducer = "correctedEndcapSuperClustersWithPreshowerL1Isolated"
