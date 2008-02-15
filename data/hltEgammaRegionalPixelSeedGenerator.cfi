@@ -15,4 +15,5 @@ module hltEgammaRegionalPixelSeedGenerator = EgammaHLTRegionalPixelSeedGenerator
     string SeedingLayers = "PixelLayerPairs"
   }
 
+    InputTag BSProducer = offlineBeamSpot
 }

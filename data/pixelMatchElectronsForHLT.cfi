@@ -1,5 +1,5 @@
 # produce electrons based on matched pixel hits
-# $Id: pixelMatchElectronsForHLT.cfi,v 1.6 2007/12/14 17:19:04 ghezzi Exp $
+# $Id: pixelMatchElectronsForHLT.cfi,v 1.7 2007/12/17 14:08:08 ghezzi Exp $
 #
 
 module pixelMatchElectronsForHLT = EgammaHLTPixelMatchElectronProducers {
@@ -19,5 +19,5 @@ module pixelMatchElectronsForHLT = EgammaHLTPixelMatchElectronProducers {
   string propagatorOpposite   = "PropagatorWithMaterialOpposite"
   string updator              = "KFUpdator"
   string estimator            = "egammaHLTChi2"
-
+  InputTag BSProducer = offlineBeamSpot
 }
