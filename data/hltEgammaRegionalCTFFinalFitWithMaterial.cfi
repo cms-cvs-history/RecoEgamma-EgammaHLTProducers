@@ -1,11 +1,12 @@
-#module hltEgammaRegionalCtfWithMaterialTracks = TrackProducer 
-module hltEgammaRegionalCTFFinalFitWithMaterial = TrackProducer 
+module  hltEgammaRegionalCTFFinalFitWithMaterial = TrackProducer
 {
-  string Fitter = "KFFittingSmoother"   
-  string Propagator = "PropagatorWithMaterial" 
-  string src = "hltEgammaRegionalCkfTrackCandidates"
-  string producer = ""
+  untracked string alias = "hltEgammaRegionalCTFFinalFitWithMaterial"
+  string Fitter = "FittingSmootherRK"
+  string Propagator = "RungeKuttaTrackerPropagator"
+  InputTag src = hltEgammaRegionalCkfTrackCandidates
+  InputTag beamSpot      = offlineBeamSpot
   string TTRHBuilder       =   "WithTrackAngle"
   bool TrajectoryInEvent = false
   bool useHitsSplitting = false
-}                                                                                                                                                           
+  InputTag clusterRemovalInfo = ""  // "" means no need to do re-keying
+}      
