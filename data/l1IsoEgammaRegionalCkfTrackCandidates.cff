@@ -14,6 +14,13 @@ include "RecoTracker/CkfPattern/data/GroupedCkfTrajectoryBuilderESProducer.cff"
 
 ############### generate CTF track candidates ############
 
-include "RecoEgamma/EgammaHLTProducers/data/hltEgammaRegionalCkfTrackCandidates.cfi"
-module  l1IsoEgammaRegionalCkfTrackCandidates = hltEgammaRegionalCkfTrackCandidates from "RecoEgamma/EgammaHLTProducers/data/hltEgammaRegionalCkfTrackCandidates.cfi"
-replace l1IsoEgammaRegionalCkfTrackCandidates.SeedProducer = "l1IsoEgammaRegionalPixelSeedGenerator"
+module l1IsoEgammaRegionalCkfTrackCandidates = ckfTrackCandidates from "RecoTracker/CkfPattern/data/CkfTrackCandidates.cfi"
+#bool   seedCleaning         = false
+replace l1IsoEgammaRegionalCkfTrackCandidates.SeedProducer   = "l1IsoEgammaRegionalPixelSeedGenerator"
+replace l1IsoEgammaRegionalCkfTrackCandidates.SeedLabel      = ""
+replace l1IsoEgammaRegionalCkfTrackCandidates.TrajectoryBuilder     = "CkfTrajectoryBuilder"
+replace l1IsoEgammaRegionalCkfTrackCandidates.TrajectoryCleaner     = "TrajectoryCleanerBySharedHits"
+## set it as "none" to avoid redundant seed cleaner
+replace l1IsoEgammaRegionalCkfTrackCandidates.RedundantSeedCleaner  = "CachingSeedCleanerBySharedInput"
+#replace l1IsoEgammaRegionalCkfTrackCandidates.RedundantSeedCleaner  = "none"
+replace l1IsoEgammaRegionalCkfTrackCandidates.NavigationSchool      = "SimpleNavigationSchool"

@@ -18,8 +18,18 @@ include "RecoTracker/CkfPattern/data/GroupedCkfTrajectoryBuilderESProducer.cff"
 
 ############### generate Ckf track candidates ############
 
-module  l1IsoLargeWindowElectronsRegionalCkfTrackCandidates = hltEgammaRegionalCkfTrackCandidates from "RecoEgamma/EgammaHLTProducers/data/hltEgammaRegionalCkfTrackCandidates.cfi"
-replace l1IsoLargeWindowElectronsRegionalCkfTrackCandidates.SeedProducer = "l1IsoLargeWindowElectronsRegionalPixelSeedGenerator"
+
+module l1IsoLargeWindowElectronsRegionalCkfTrackCandidates = ckfTrackCandidates from "RecoTracker/CkfPattern/data/CkfTrackCandidates.cfi"
+#bool   seedCleaning         = false
+replace l1IsoLargeWindowElectronsRegionalCkfTrackCandidates.SeedProducer   = "l1IsoLargeWindowElectronsRegionalPixelSeedGenerator"
+replace l1IsoLargeWindowElectronsRegionalCkfTrackCandidates.SeedLabel      = ""
+replace l1IsoLargeWindowElectronsRegionalCkfTrackCandidates.TrajectoryBuilder     = "CkfTrajectoryBuilder"
+replace l1IsoLargeWindowElectronsRegionalCkfTrackCandidates.TrajectoryCleaner     = "TrajectoryCleanerBySharedHits"
+## set it as "none" to avoid redundant seed cleaner
+replace l1IsoLargeWindowElectronsRegionalCkfTrackCandidates.RedundantSeedCleaner  = "CachingSeedCleanerBySharedInput"
+#replace l1IsoLargeWindowElectronsRegionalCkfTrackCandidates.RedundantSeedCleaner  = "none"
+replace l1IsoLargeWindowElectronsRegionalCkfTrackCandidates.NavigationSchool      = "SimpleNavigationSchool"
+
 
 #-------------------------------------------------------------------	
 
