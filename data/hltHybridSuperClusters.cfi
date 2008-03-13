@@ -32,10 +32,10 @@
     double regionPhiMargin = 0.4
 
     # output collections
-    string clustershapecollection = ""
+#    string clustershapecollection = ""
     string basicclusterCollection = ""
     string superclusterCollection = ""
-    string shapeAssociation = "hybridShapeAssoc"
+#    string shapeAssociation = "hybridShapeAssoc"
     string debugLevel         = "INFO"
 
   }

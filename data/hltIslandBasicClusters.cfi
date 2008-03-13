@@ -34,9 +34,9 @@ module hltIslandBasicClusters = EgammaHLTIslandClusterProducer
     double regionEtaMargin = 0.3 #MARCO 0.14
     double regionPhiMargin = 0.4
 
-    string clustershapecollectionEB = "islandBarrelShape"
-    string clustershapecollectionEE = "islandEndcapShape"
-    string barrelShapeAssociation = "islandBarrelShapeAssoc"
-    string endcapShapeAssociation = "islandEndcapShapeAssoc"
+#    string clustershapecollectionEB = "islandBarrelShape"
+#    string clustershapecollectionEE = "islandEndcapShape"
+#    string barrelShapeAssociation = "islandBarrelShapeAssoc"
+#    string endcapShapeAssociation = "islandEndcapShapeAssoc"
 
 }
