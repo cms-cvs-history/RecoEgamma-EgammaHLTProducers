@@ -12,5 +12,5 @@ include "RecoTracker/TkNavigation/data/NavigationSchoolESProducer.cff"
 
 module pixelMatchElectronsL1NonIsoForHLT = pixelMatchElectronsForHLT from "RecoEgamma/EgammaHLTProducers/data/pixelMatchElectronsForHLT.cfi"
 
-replace pixelMatchElectronsL1NonIsoForHLT.TrackLabel = "ctfL1NonIsoWithMaterialTracks"
+replace pixelMatchElectronsL1NonIsoForHLT.TrackProducer = ctfL1NonIsoWithMaterialTracks
 replace pixelMatchElectronsL1NonIsoForHLT.TrajectoryBuilder    = "TrajectoryBuilderForPixelMatchElectronsL1NonIso"
