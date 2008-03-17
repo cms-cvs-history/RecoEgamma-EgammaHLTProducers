@@ -1,5 +1,5 @@
 module hltEgammaRegionalPixelSeedGenerator = EgammaHLTRegionalPixelSeedGeneratorProducers{
-    string HitProducer = "siPixelRecHits"
+#    string HitProducer = "siPixelRecHits"
     double ptMin = 1.5 #1.0
     double vertexZ = 0.0
     double originRadius = 0.02 #0.2

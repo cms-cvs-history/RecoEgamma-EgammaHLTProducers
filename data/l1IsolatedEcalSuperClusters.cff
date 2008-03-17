@@ -101,11 +101,13 @@ replace correctedEndcapSuperClustersWithPreshowerL1Isolated.etThresh = 5.0
 
 ##    string barrelHitProducer   = "ecalRegionalEgammaRecHit"
 ##    string endcapHitProducer   = "ecalRegionalEgammaRecHit"
-    replace hltIslandBasicClustersEndcapL1Isolated.endcapHitProducer = "ecalRegionalEgammaRecHit"
-    replace hltIslandBasicClustersBarrelL1Isolated.barrelHitProducer = "ecalRegionalEgammaRecHit"
+    replace hltIslandBasicClustersEndcapL1Isolated.endcapHitProducer = ecalRegionalEgammaRecHit
+    replace hltIslandBasicClustersBarrelL1Isolated.barrelHitProducer = ecalRegionalEgammaRecHit
+
     replace correctedIslandEndcapSuperClustersL1Isolated.recHitProducer = "ecalRegionalEgammaRecHit"
     replace correctedIslandBarrelSuperClustersL1Isolated.recHitProducer = "ecalRegionalEgammaRecHit"
-    replace hltHybridSuperClustersL1Isolated.ecalhitproducer = "ecalRegionalEgammaRecHit"
+
+    replace hltHybridSuperClustersL1Isolated.ecalhitproducer = ecalRegionalEgammaRecHit
     replace correctedHybridSuperClustersL1Isolated.recHitProducer = "ecalRegionalEgammaRecHit"
 
 

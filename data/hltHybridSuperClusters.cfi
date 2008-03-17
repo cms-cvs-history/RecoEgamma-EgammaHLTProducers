@@ -5,7 +5,7 @@
     bool doIsolated = true
 
     # input collection
-    string ecalhitproducer = "ecalRecHit"
+    InputTag ecalhitproducer = ecalRecHit
     string ecalhitcollection = "EcalRecHitsEB"
 
     # clustering parameters
