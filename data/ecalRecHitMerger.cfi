@@ -17,6 +17,9 @@
 
    untracked string OutputLabel_EB = "EcalRecHitsEB"
    untracked string OutputLabel_EE = "EcalRecHitsEE"
+
+    untracked string EcalRecHitCollectionEB = "EcalRecHitsEB"
+    untracked string EcalRecHitCollectionEE = "EcalRecHitsEE"
  }
 
 
