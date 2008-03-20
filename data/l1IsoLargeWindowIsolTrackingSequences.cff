@@ -20,7 +20,7 @@
 
 
   # act locally, not globally!  so regional pixel tracking, let's go:
-  include "RecoEgamma/EgammaHLTProducers/data/l1IsoEgammaRegionalPixelSeedGenerator.cff"
+ # include "RecoEgamma/EgammaHLTProducers/data/l1IsoEgammaRegionalPixelSeedGenerator.cff"
 
 include "RecoEgamma/EgammaHLTProducers/data/hltEgammaRegionalPixelSeedGenerator.cfi"
 module l1IsoEgammaRegionalPixelSeedGenerator = hltEgammaRegionalPixelSeedGenerator from "RecoEgamma/EgammaHLTProducers/data/hltEgammaRegionalPixelSeedGenerator.cfi"

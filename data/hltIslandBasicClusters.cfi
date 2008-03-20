@@ -26,7 +26,7 @@ module hltIslandBasicClusters = EgammaHLTIslandClusterProducer
     double posCalc_w0 = 4.2
     double posCalc_x0 = 0.89
 
-    InputTag l1TagIsolated = "l1extraParticles:Isolated"
+    InputTag l1TagIsolated = l1extraParticles:Isolated
     InputTag l1TagNonIsolated = l1extraParticles:NonIsolated
     double l1LowerThr = 0.
     double l1UpperThr = 999.
