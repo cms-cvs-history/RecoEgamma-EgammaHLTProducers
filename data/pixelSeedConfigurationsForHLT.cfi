@@ -28,9 +28,10 @@ block l1IsoElectronPixelSeedConfiguration = {
        double pPhiMax1 =  0.025
 
 # for filtering
-       string hbheModule                = "hbhereco"
-       string hbheInstance              = ""
+#       string hbheModule                = "hbhereco"
+#       string hbheInstance              = ""
 ##       double hOverEConeSize = 0.1
+       InputTag hcalRecHits = hbhereco
        double maxHOverE = 0.2
        double SCEtCut = 5.
 }
@@ -66,9 +67,10 @@ block l1NonIsoElectronPixelSeedConfiguration = {
        double pPhiMax1 =  0.025
 
 # for filtering
-       string hbheModule                = "hbhereco"
-       string hbheInstance              = ""
+#       string hbheModule                = "hbhereco"
+#       string hbheInstance              = ""
 ##       double hOverEConeSize = 0.1
+       InputTag hcalRecHits = hbhereco
        double maxHOverE = 0.2
        double SCEtCut = 5.
 }
@@ -103,9 +105,10 @@ block  l1IsoLargeWindowElectronPixelSeedConfiguration= {
        double pPhiMax1 =  0.035
 
 # for filtering
-       string hbheModule                = "hbhereco"
-       string hbheInstance              = ""
+#       string hbheModule                = "hbhereco"
+#       string hbheInstance              = ""
 ##       double hOverEConeSize = 0.1
+       InputTag hcalRecHits = hbhereco
        double maxHOverE = 0.2
        double SCEtCut = 5.
 }
@@ -140,9 +143,10 @@ block l1NonIsoLargeWindowElectronPixelSeedConfiguration = {
        double pPhiMax1 =  0.035
 
 # for filtering
-       string hbheModule                = "hbhereco"
-       string hbheInstance              = ""
+#       string hbheModule                = "hbhereco"
+#       string hbheInstance              = ""
 ##       double hOverEConeSize = 0.1
+       InputTag hcalRecHits = hbhereco
        double maxHOverE = 0.2
        double SCEtCut = 5.
 }
