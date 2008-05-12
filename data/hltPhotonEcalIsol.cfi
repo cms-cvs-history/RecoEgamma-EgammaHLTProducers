@@ -10,5 +10,6 @@ module hltPhotonEcalIsol = EgammaHLTEcalIsolationProducersRegional {
 
   double egEcalIsoEtMin = 0
   double egEcalIsoConeSize = 0.3
+  int32 SCAlgoType = 0 
 
 }
