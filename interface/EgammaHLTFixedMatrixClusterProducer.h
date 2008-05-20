@@ -1,5 +1,5 @@
-#ifndef RecoEcal_EgammaClusterProducers_EgammaHLTMulti5x5ClusterProducer_h_
-#define RecoEcal_EgammaClusterProducers_EgammaHLTMulti5x5ClusterProducer_h_
+#ifndef RecoEcal_EgammaClusterProducers_EgammaHLTFixedMatrixClusterProducer_h_
+#define RecoEcal_EgammaClusterProducers_EgammaHLTFixedMatrixClusterProducer_h_
 
 #include <memory>
 #include <time.h>
@@ -12,7 +12,7 @@
 #include "FWCore/ParameterSet/interface/ParameterSet.h"
 
 #include "DataFormats/EcalRecHit/interface/EcalRecHitCollections.h"
-#include "RecoEcal/EgammaClusterAlgos/interface/Multi5x5ClusterAlgo.h"
+#include "RecoEcal/EgammaClusterAlgos/interface/FixedMatrixClusterAlgo.h"
 #include "RecoEcal/EgammaCoreTools/interface/PositionCalc.h"
 #include "RecoEcal/EgammaCoreTools/interface/ClusterShapeAlgo.h"
 
@@ -20,13 +20,13 @@
 //
 
 
-class EgammaHLTMulti5x5ClusterProducer : public edm::EDProducer 
+class EgammaHLTFixedMatrixClusterProducer : public edm::EDProducer 
 {
   public:
 
-      EgammaHLTMulti5x5ClusterProducer(const edm::ParameterSet& ps);
+      EgammaHLTFixedMatrixClusterProducer(const edm::ParameterSet& ps);
 
-      ~EgammaHLTMulti5x5ClusterProducer();
+      ~EgammaHLTFixedMatrixClusterProducer();
 
       virtual void produce(edm::Event&, const edm::EventSetup&);
 
@@ -35,7 +35,7 @@ class EgammaHLTMulti5x5ClusterProducer : public edm::EDProducer
       int nMaxPrintout_; // max # of printouts
       int nEvt_;         // internal counter of events
 
-      Multi5x5ClusterAlgo::VerbosityLevel verbosity;
+      FixedMatrixClusterAlgo::VerbosityLevel verbosity;
 
       bool doBarrel_;
       bool doEndcaps_;
@@ -67,7 +67,7 @@ class EgammaHLTMulti5x5ClusterProducer : public edm::EDProducer
       double regionPhiMargin_;
 
       PositionCalc posCalculator_; // position calculation algorithm
-      Multi5x5ClusterAlgo * Multi5x5_p;
+      FixedMatrixClusterAlgo * fixexMatrix_p;
       //ClusterShapeAlgo shapeAlgo_;//new
 
       bool counterExceeded() const { return ((nEvt_ > nMaxPrintout_) || (nMaxPrintout_ < 0)); }
@@ -82,14 +82,14 @@ class EgammaHLTMulti5x5ClusterProducer : public edm::EDProducer
                               const std::string& hitCollection,
                               const std::string& clusterCollection,
                               const std::vector<EcalEtaPhiRegion>& regions,
-                              const Multi5x5ClusterAlgo::EcalPart& ecalPart);
+                              const FixedMatrixClusterAlgo::EcalPart& ecalPart);
       /*
       void clusterizeECALPart(edm::Event &evt, const edm::EventSetup &es,
                               const std::string& hitProducer,
                               const std::string& hitCollection,
                               const std::string& clusterCollection,
 			      const std::string& clusterShapeAssociation,
-                              const Multi5x5ClusterAlgo::EcalPart& ecalPart);
+                              const FixedMatrixClusterAlgo::EcalPart& ecalPart);
       */
       void outputValidationInfo(reco::BasicClusterRefVector &clusterRefVector);
 
