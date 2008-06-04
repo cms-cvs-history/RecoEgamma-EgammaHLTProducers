@@ -22,6 +22,23 @@
   # act locally, not globally!  so regional pixel tracking, let's go:
   include "RecoEgamma/EgammaHLTProducers/data/l1NonIsoEgammaRegionalPixelSeedGenerator.cff"
 
+include "RecoEgamma/EgammaHLTProducers/data/hltEgammaRegionalPixelSeedGenerator.cfi"
+module l1NonIsoEgammaRegionalPixelSeedGenerator = hltEgammaRegionalPixelSeedGenerator from "RecoEgamma/EgammaHLTProducers/data/hltEgammaRegionalPixelSeedGenerator.cfi"
+
+replace l1NonIsoEgammaRegionalPixelSeedGenerator.candTag =  l1NonIsoRecoEcalCandidate
+
+#   string HitProducer = "siPixelRecHits"
+#    double ptMin = 1.0
+#    double vertexZ = 0.0
+#    double originRadius = 0.2
+#    double originHalfLength = 15.0
+#    double deltaEtaRegion = .177 #1.0
+#    double deltaPhiRegion = .177 #1.0
+#    string TTRHBuilder = "WithTrackAngle"
+#    InputTag candTag =  hltRecoEcalCandidate
+
+
+
 
   sequence l1NonIsoEgammaRegionalRecoTracker = {l1NonIsoEgammaRegionalPixelSeedGenerator, l1NonIsoEgammaRegionalCkfTrackCandidates, l1NonIsoEgammaRegionalCTFFinalFitWithMaterial} 
 
