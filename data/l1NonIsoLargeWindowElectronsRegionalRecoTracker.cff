@@ -35,7 +35,6 @@ replace l1NonIsoLargeWindowElectronsRegionalCkfTrackCandidates.NavigationSchool 
 ##################### generate CTF track candidates
 
 # magnetic field
-include "MagneticField/Engine/data/volumeBasedMagneticField.cfi"
 
 # cms geometry
 include "Geometry/CMSCommonData/data/cmsIdealGeometryXML.cfi"
